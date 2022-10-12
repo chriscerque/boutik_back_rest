@@ -5,6 +5,7 @@ import net.ent.etrs.boutik.model.entities.Categorie;
 import net.ent.etrs.boutik.model.facades.FacadeCategorie;
 import net.ent.etrs.boutik.model.facades.api.dtos.DtoCategorie;
 import net.ent.etrs.boutik.model.facades.api.dtos.converters.DtoCategorieConverter;
+import net.ent.etrs.boutik.model.facades.api.filters.annotations.JWTTokenNeeded;
 import net.ent.etrs.boutik.model.facades.exceptions.BusinessException;
 
 import javax.inject.Inject;
@@ -13,6 +14,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.Set;
 
+@JWTTokenNeeded
 @Path("/categories")
 public class FacadeCategorieRest {
 
