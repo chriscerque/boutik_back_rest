@@ -6,6 +6,8 @@ import net.ent.etrs.boutik.model.facades.FacadeMarque;
 import net.ent.etrs.boutik.model.facades.api.dtos.DtoMarque;
 import net.ent.etrs.boutik.model.facades.api.dtos.converters.DtoMarqueConverter;
 import net.ent.etrs.boutik.model.facades.api.filters.annotations.JWTTokenNeeded;
+import net.ent.etrs.boutik.model.facades.api.filters.annotations.RoleAdmin;
+import net.ent.etrs.boutik.model.facades.api.filters.annotations.RoleUser;
 import net.ent.etrs.boutik.model.facades.exceptions.BusinessException;
 
 import javax.inject.Inject;
@@ -25,6 +27,7 @@ public class FacadeMarqueRest {
     @GET
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
+    @RoleUser
     public Response findAll() {
         try {
             Set<Marque> marques = this.facadeMarque.findAll();
@@ -39,6 +42,7 @@ public class FacadeMarqueRest {
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
+    @RoleUser
     public Response findById(@PathParam("id") Long id) {
         try {
             return Response.ok(DtoMarqueConverter.toDto(this.facadeMarque.findById(id).orElseThrow(Exception::new))).build();
@@ -52,6 +56,7 @@ public class FacadeMarqueRest {
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
+    @RoleAdmin
     public Response create(DtoMarque dtoMarque) {
 
         try {
@@ -73,6 +78,7 @@ public class FacadeMarqueRest {
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
+    @RoleAdmin
     public Response update(DtoMarque dtoMarque, @PathParam("id") Long id) {
 
         try {
@@ -89,6 +95,7 @@ public class FacadeMarqueRest {
 
     @DELETE
     @Path("/{id}")
+    @RoleAdmin
     public Response delete(@PathParam("id") Long id) {
         try {
             if (!this.facadeMarque.exist(id)) {

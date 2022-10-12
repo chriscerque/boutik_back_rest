@@ -1,6 +1,4 @@
 
-{
-Ksrc/main/java/net/ent/etrs/boutik/model/facades/api/FacadeCommandeRest.java,d\1\d137a13b3489ce0658d3d3fbac0ee2257f614804
 w
 Gsrc/main/java/net/ent/etrs/boutik/model/facades/api/dtos/DtoMarque.java,8\1\81fc80bfdd41c22c0a5e370bc5951850978be568
 s
@@ -13,8 +11,6 @@ y
 Isrc/main/java/net/ent/etrs/boutik/model/facades/api/dtos/DtoCommande.java,e\1\e1727d674bb3e56800f271d86b5cfc4e0fd147b7
 r
 Bsrc/main/java/net/ent/etrs/boutik/model/facades/FacadeProduit.java,0\0\0095ccedf29f7e63d43935e734a025114d214ab6
-z
-Jsrc/main/java/net/ent/etrs/boutik/model/facades/api/FacadeProduitRest.java,e\a\ea6be26e30be2580e1ae371e255566b43c9eb65c
 o
 ?src/main/java/net/ent/etrs/boutik/model/facades/FacadeUser.java,c\c\cc2226a60f237e5eea51eb319ecd8d35de50f0e6
 z
