@@ -5,6 +5,7 @@ import net.ent.etrs.boutik.model.entities.Marque;
 import net.ent.etrs.boutik.model.facades.FacadeMarque;
 import net.ent.etrs.boutik.model.facades.api.dtos.DtoMarque;
 import net.ent.etrs.boutik.model.facades.api.dtos.converters.DtoMarqueConverter;
+import net.ent.etrs.boutik.model.facades.api.filters.annotations.JWTTokenNeeded;
 import net.ent.etrs.boutik.model.facades.exceptions.BusinessException;
 
 import javax.inject.Inject;
@@ -13,6 +14,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.Set;
 
+@JWTTokenNeeded
 @Path("/marques")
 public class FacadeMarqueRest {
 
